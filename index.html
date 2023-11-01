@@ -17,6 +17,15 @@
                     return Scissors;
                 }
             }
+
+            let playerSelection = prompt("Please choose a move:");
+            if (playerSelection.toLowerCase() == rock) {
+                return Rock;
+            } else if (playerSelection.toLowerCase() == paper) {
+                return Paper;
+            } else {
+                return Scissors;
+            }
         </script>
     </body>
 </html>
