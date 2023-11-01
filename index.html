@@ -6,11 +6,12 @@
     </head>
     <body>
         <script>
-            let Rock;
-            let Paper;
-            let Scissors;
-            
-            function getComputerChoice(Rock, Paper, Scissors) {
+
+            let Rock = "Rock";
+            let Paper = "Paper";
+            let Scissors = "Scissors";
+
+            function getComputerChoice() {
                 let result = Math.floor (Math.random() * 3 + 1);
                 console.log(result);
                 if (result === 1) {
@@ -22,7 +23,7 @@
                 }
             }
 
-            function getUserChoice(Rock, Paper, Scissors) {
+            function getUserChoice() {
                 let move = prompt("Please choose a move:");
                 let rock;
                 let paper;
@@ -36,25 +37,26 @@
                 }
             }
 
-            let playerSelection = getUserChoice()
-            let computerSelection = getComputerChoice()
+                let playerSelection = getUserChoice();
+                let computerSelection = getComputerChoice();
 
 
-                if (playerSelection === Rock && computerSelection === Paper) {
+                if (playerSelection == Rock && computerSelection == Paper) {
                     console.log("You Lose! Paper beats Rock");
-                } else if (playerSelection === Rock && computerSelection === Scissors) {
+                } else if (playerSelection == Rock && computerSelection == Scissors) {
                     console.log("You Win! Rock beats Scissors");
-                } else if (playerSelection === Paper && computerSelection === Rock) {
+                } else if (playerSelection == Paper && computerSelection == Rock) {
                     console.log("You Win! Paper beats Rock");
-                } else if (playerSelection === Paper && computerSelection === Scissors) {
+                } else if (playerSelection == Paper && computerSelection == Scissors) {
                     console.log("You Lose! Scissors beat Paper");
-                } else if (playerSelection === Scissors && computerSelection === Rock) {
+                } else if (playerSelection == Scissors && computerSelection == Rock) {
                     console.log("You Lose! Rock beats Scissors");
-                } else if (playerSelection === Scissors && computerSelection === Paper) {
+                } else if (playerSelection == Scissors && computerSelection == Paper) {
                     console.log("You Win! Scissors beat Paper");
                 } else {
                     console.log("Draw! Try again");
                 }
+
             
         </script>
     </body>
