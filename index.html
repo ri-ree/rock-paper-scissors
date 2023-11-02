@@ -39,23 +39,31 @@
 
                 let playerSelection = getUserChoice();
                 let computerSelection = getComputerChoice();
+                let loseRock = "You Lose! Paper beats Rock";
+                let winRock = "You Win! Rock beats Scissors";
+                let winPaper = "You Win! Paper beats Rock";
+                let losePaper = "You Lose! Scissors beat Paper";
+                let loseScissors = "You Lose! Rock beats Scissors";
+                let winScissors = "You Win! Scissors beat Paper";
+                let draw = "Draw! Try again";
 
-
+            function playRound(playerSelection, computerSelection) {
                 if (playerSelection == Rock && computerSelection == Paper) {
-                    console.log("You Lose! Paper beats Rock");
+                    return loseRock;
                 } else if (playerSelection == Rock && computerSelection == Scissors) {
-                    console.log("You Win! Rock beats Scissors");
+                    return winRock;
                 } else if (playerSelection == Paper && computerSelection == Rock) {
-                    console.log("You Win! Paper beats Rock");
+                    return winPaper;
                 } else if (playerSelection == Paper && computerSelection == Scissors) {
-                    console.log("You Lose! Scissors beat Paper");
+                    return losePaper;
                 } else if (playerSelection == Scissors && computerSelection == Rock) {
-                    console.log("You Lose! Rock beats Scissors");
+                    return loseScissors;
                 } else if (playerSelection == Scissors && computerSelection == Paper) {
-                    console.log("You Win! Scissors beat Paper");
+                    return winScissors;
                 } else {
-                    console.log("Draw! Try again");
+                    return draw;
                 }
+            }
 
             
         </script>
