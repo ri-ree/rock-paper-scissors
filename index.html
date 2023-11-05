@@ -13,34 +13,32 @@
 
             function game() {
 
-            function getComputerChoice() {
-                let result = Math.floor (Math.random() * 3 + 1);
-                console.log(result);
-                if (result === 1) {
-                    return Rock;
-                } else if (result === 2) {
-                    return Paper;
-                } else {
-                    return Scissors;
+                function getComputerChoice() {
+                    let result = Math.floor (Math.random() * 3 + 1);
+                    console.log(result);
+                    if (result === 1) {
+                        return Rock;
+                    } else if (result === 2) {
+                        return Paper;
+                    } else {
+                        return Scissors;
+                    }
                 }
-            }
 
-            function getUserChoice() {
-                let move = prompt("Please choose a move:");
-                let rock;
-                let paper;
-                let scissors;
-                if (move.toLowerCase() == "rock") {
-                    return Rock;
-                } else if (move.toLowerCase() == "paper") {
-                    return Paper;
-                } else {
-                    return Scissors;
+                function getUserChoice() {
+                    let move = prompt("Please choose a move:");
+                    let rock;
+                    let paper;
+                    let scissors;
+                    if (move.toLowerCase() == "rock") {
+                        return Rock;
+                    } else if (move.toLowerCase() == "paper") {
+                        return Paper;
+                    } else {
+                        return Scissors;
+                    }
                 }
-            }
 
-                let playerSelection = getUserChoice();
-                let computerSelection = getComputerChoice();
                 let loseRock = "You Lose! Paper beats Rock";
                 let winRock = "You Win! Rock beats Scissors";
                 let winPaper = "You Win! Paper beats Rock";
@@ -49,30 +47,50 @@
                 let winScissors = "You Win! Scissors beat Paper";
                 let draw = "Draw! Try again";
 
-            function playRound(playerSelection, computerSelection) {
-                if (playerSelection == Rock && computerSelection == Paper) {
-                    return loseRock;
-                } else if (playerSelection == Rock && computerSelection == Scissors) {
-                    return winRock;
-                } else if (playerSelection == Paper && computerSelection == Rock) {
-                    return winPaper;
-                } else if (playerSelection == Paper && computerSelection == Scissors) {
-                    return losePaper;
-                } else if (playerSelection == Scissors && computerSelection == Rock) {
-                    return loseScissors;
-                } else if (playerSelection == Scissors && computerSelection == Paper) {
-                    return winScissors;
-                } else {
-                    return draw;
+                function playRound (playerSelection, computerSelection) {
+                    if (playerSelection == Rock && computerSelection == Paper) {
+                        console.log("You Lose! Paper beats Rock");
+                    } else if (playerSelection == Rock && computerSelection == Scissors) {
+                        console.log("You Win! Rock beats Scissors");
+                    } else if (playerSelection == Paper && computerSelection == Rock) {
+                        console.log("You Win! Paper beats Rock");
+                    } else if (playerSelection == Paper && computerSelection == Scissors) {
+                        console.log("You Lose! Scissors beat Paper");
+                    } else if (playerSelection == Scissors && computerSelection == Rock) {
+                        console.log("You Lose! Rock beats Scissors");
+                    } else if (playerSelection == Scissors && computerSelection == Paper) {
+                        console.log("You Win! Scissors beat Paper");
+                    } else {
+                        console.log("Draw! Try again");
+                    }
                 }
+
+                playRound (getUserChoice(), getComputerChoice());
+
+                let a = 0;
+                let b = 0;
+                let frederic = playRound();
+                let arthur = frederic.charAt(4);
+
+                function roundResults (a, b) {
+
+                    if (arthur == "W") {
+                        return a++;
+                    } else if (arthur == "L") {
+                        return b++;
+                    }
+                }
+
+                console.log(arthur);
+                console.log(a);
+                console.log(b);
             }
-            }
+
+
 
 
                 for (let i = 0; i < 5; i++) {
-
                     game();
-
             }
 
 
