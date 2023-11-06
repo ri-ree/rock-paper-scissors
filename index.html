@@ -15,7 +15,6 @@
 
                 function getComputerChoice() {
                     let result = Math.floor (Math.random() * 3 + 1);
-                    console.log(result);
                     if (result === 1) {
                         return Rock;
                     } else if (result === 2) {
@@ -65,38 +64,24 @@
                     }
                 }
 
-                playRound (getUserChoice(), getComputerChoice());
+                console.log(playRound (getUserChoice(), getComputerChoice()));
 
-                let a = 0;
-                let b = 0;
-                let frederic = playRound();
+                let frederic = playRound(getUserChoice(), getComputerChoice());
                 let arthur = frederic.charAt(4);
 
                 function roundResults (a, b) {
 
                     if (arthur == "W") {
-                        return a++;
+                        console.log(a++);
                     } else if (arthur == "L") {
-                        return b++;
+                        console.log(b++);
                     }
                 }
 
-                console.log(a);
-                console.log(b);
+
                 console.log(arthur);
             }
 
-
-
-
-                for (let i = 0; i < 5; i++) {
-                    game();
-            }
-
-
-
-
-            
         </script>
     </body>
 </html>
