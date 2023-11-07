@@ -63,16 +63,20 @@
                     }
                 }
 
-                console.log(playRound (getUserChoice(), getComputerChoice()));
+                let fall = playRound (getUserChoice(), getComputerChoice());
 
                 function roundResults (a, b) {
 
-                    if (arthur == "W") {
-                        console.log(a++);
-                    } else if (arthur == "L") {
-                        console.log(b++);
+                    if (fall.charAt(4) == "W") {
+                        return a++;
+                    } else if (fall.charAt(4)== "L") {
+                        return b++;
                     }
                 }
+                let y = 0;
+                let x = 0;
+
+                console.log(roundResults (x, y));
 
         </script>
     </body>
