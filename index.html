@@ -81,17 +81,21 @@
 
                 console.log(roundResults());
 
+                let winGame = "You win!";
+                let loseGame = "Computer wins!";
+                let drawGame = "Draw!";
+
                 function gameWinner() {
                     if (x > y) {
-                        console.log("You win!");
+                        return winGame;
                     } else if (x < y) {
-                        console.log("Computer wins!");
+                        return loseGame;
                     } else {
-                        console.log("Draw!");
+                        return drawGame;
                     }
                 }
 
-                console.log(gameWinner());
+                console.log(gameWinner())
 
 
 
