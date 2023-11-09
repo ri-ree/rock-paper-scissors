@@ -10,6 +10,10 @@
             let Rock = "Rock";
             let Paper = "Paper";
             let Scissors = "Scissors";
+            let x = 0;
+            let y = 0;
+
+
 
 
                 function getComputerChoice() {
@@ -63,23 +67,32 @@
                     }
                 }
 
-                let fall = playRound (getUserChoice(), getComputerChoice());
-                console.log(fall);
+                let theRound = playRound (getUserChoice(), getComputerChoice());
+                console.log(theRound);
 
-                function roundResults (a, b) {
+                function roundResults () {
 
-                    if (fall.charAt(4) == "W") {
-                        console.log(++a);
-                    } else if (fall.charAt(4)== "L") {
-                        console.log(++b);
+                    if (theRound.charAt(4) == "W") {
+                        return ++x;
+                    } else if (theRound.charAt(4)== "L") {
+                        return ++y;
                     }
                 }
 
-                let y = 0;
-                let x = 0;
+                console.log(roundResults());
 
-                let frederic = roundResults (x, y);
-                console.log(frederic);
+                function gameWinner() {
+                    if (x > y) {
+                        console.log("You win!");
+                    } else if (x < y) {
+                        console.log("Computer wins!");
+                    } else {
+                        console.log("Draw!");
+                    }
+                }
+
+                console.log(gameWinner());
+
 
 
         </script>
