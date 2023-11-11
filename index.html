@@ -71,16 +71,19 @@
                     let theRound = playRound (getUserChoice(), getComputerChoice());
                     console.log(theRound);
 
+                    console.log(theRound.charAt(4));
 
-                    function roundResults () {
+                    function roundResults() {
                         if (theRound.charAt(4) == "W") {
                             return ++x;
                         } else if (theRound.charAt(4)== "L") {
                             return ++y;
                         }
                     }
+                    
+                    let incResults = roundResults();
 
-                    console.log(roundResults);
+                    console.log(incResults);
 
                 }
 
@@ -88,10 +91,6 @@
                         game ();
                     }
 
-
-
-                console.log(x);
-                console.log(y);
 
                 let winGame = "You win!";
                 let loseGame = "Computer wins!";
@@ -107,7 +106,8 @@
                     }
                 }
 
-                console.log(gameWinner())
+                console.log(gameWinner());
+
 
 
 
