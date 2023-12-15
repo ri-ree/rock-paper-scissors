@@ -21,6 +21,8 @@
             let Rock = "Rock";
             let Paper = "Paper";
             let Scissors = "Scissors";
+            let x = 0;
+            let y = 0;
 
 
                 function getComputerChoice() {
@@ -42,21 +44,34 @@
                 const div = document.querySelector('div');
                 const results = document.createElement('div');
 
+                const playerScore = document.querySelector('#playerScore');
+                const computerScore = document.querySelector('#computerScore');
 
+                const playerResults = document.createElement('div');
+                const computerResults = document.createElement('div');
+
+                playerResults.textContent = x;
+                computerResults.textContent = y;
 
                 function playRound (playerSelection) {
                         if (playerSelection == Rock && getComputerChoice() == Paper) {
                             results.textContent = "You Lose! Paper beats Rock";
+                            computerResults.textContent = ++y;
                         } else if (playerSelection == Rock && getComputerChoice() == Scissors) {
                             results.textContent = "You Win! Rock beats Scissors";
+                            playerResults.textContent = ++x;
                         } else if (playerSelection == Paper && getComputerChoice() == Rock) {
                             results.textContent = "You Win! Paper beats Rock";
+                            playerResults.textContent = ++x;
                         } else if (playerSelection == Paper && getComputerChoice() == Scissors) {
                             results.textContent = "You Lose! Scissors beat Paper";
+                            computerResults.textContent = ++y;
                         } else if (playerSelection == Scissors && getComputerChoice() == Rock) {
                             results.textContent = "You Lose! Rock beats Scissors";
+                            computerResults.textContent = ++y;
                         } else if (playerSelection == Scissors && getComputerChoice() == Paper) {
                             results.textContent = "You Win! Scissors beat Paper";
+                            playerResults.textContent = ++x;
                         } else {
                             results.textContent = "Draw! Try again";
                         }
@@ -77,36 +92,13 @@
                     playRound(Scissors);
                 });
 
-                let x = 0;
-                let y = 0;
-
                 console.log(x);
                 console.log(y);
+                console.log(results.textContent);
 
-
-                const playerScore = document.querySelector('#playerScore');
-                const computerScore = document.querySelector('#computerScore');
-
-                const playerResults = document.createElement('div');
-                const computerResults = document.createElement('div');
-
-                playerResults.textContent = x;
-                computerResults.textContent = y;
 
                 playerScore.appendChild(playerResults);
                 computerScore.appendChild(computerResults);
-
-
-
-                function roundResults() {
-                    if (results.textContent.charAt(4) == "W") {
-                        console.log(++x);
-                    } else if (results.textContent.charAt(4) == "L") {
-                        console.log(++y);
-                    }
-                };
-                    
-                let incResults = roundResults();
 
 
                 let winGame = "You win!";
