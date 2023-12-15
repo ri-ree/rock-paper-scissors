@@ -12,14 +12,15 @@
 
         <div>Results:</div>
 
+        <div id="playerScore">Player score:</div>
+        <div id="computerScore">Computer score:</div>
+
 
         <script>
 
             let Rock = "Rock";
             let Paper = "Paper";
             let Scissors = "Scissors";
-            let x = 0;
-            let y = 0;
 
 
                 function getComputerChoice() {
@@ -64,8 +65,6 @@
                 div.appendChild(results);
 
 
-
-
                 rockButton.addEventListener('click', () => {
                     playRound(Rock);
                 });
@@ -78,17 +77,36 @@
                     playRound(Scissors);
                 });
 
+                let x = 0;
+                let y = 0;
+
+                console.log(x);
+                console.log(y);
 
 
-                    function roundResults() {
-                        if (playRound().charAt(4) == "W") {
-                            return ++x;
-                        } else if (theRound.charAt(4)== "L") {
-                            return ++y;
-                        }
-                    };
+                const playerScore = document.querySelector('#playerScore');
+                const computerScore = document.querySelector('#computerScore');
+
+                const playerResults = document.createElement('div');
+                const computerResults = document.createElement('div');
+
+                playerResults.textContent = x;
+                computerResults.textContent = y;
+
+                playerScore.appendChild(playerResults);
+                computerScore.appendChild(computerResults);
+
+
+
+                function roundResults() {
+                    if (results.textContent.charAt(4) == "W") {
+                        console.log(++x);
+                    } else if (results.textContent.charAt(4) == "L") {
+                        console.log(++y);
+                    }
+                };
                     
-                    let incResults = roundResults();
+                let incResults = roundResults();
 
 
                 let winGame = "You win!";
